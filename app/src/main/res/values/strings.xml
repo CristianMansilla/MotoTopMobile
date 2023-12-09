@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MotoTop</string>
+    <string name="txt_dni">DNI</string>
+    <string name="txt_pass">CONTRASEÑA</string>
+    <string name="btn_ingresar">INGRESAR</string>
+    <string name="slogan">Donde la calidad y la velocidad se encuentran</string>
+    <string name="txt_info">INGRESO VENDEDOR</string>
+</resources>

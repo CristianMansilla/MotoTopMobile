@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_client_agregar"
+    tools:context=".ClientesAgregarActivity">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="INGRESE LOS DATOS:"
+        android:textColor="@color/blue"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombre"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/edtApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Apellido"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/edtDni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="DNI"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/edtPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Contraseña"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/edtTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Teléfono"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/edtCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/edtDomicilio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Domicilio"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/edtDireccionEntrega"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Dirección de entrega"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#000000"
+        android:text="INGRESAR" />
+</LinearLayout>

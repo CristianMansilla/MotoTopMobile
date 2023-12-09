@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_client_agregar"
+    tools:context=".PedidosAgregarActivity">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="INGRESE LOS DATOS:"
+        android:textColor="@color/blue"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="24sp" />
+    <Spinner
+        android:id="@+id/spinnerClientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/edtPedidoDireccionEntrega"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Direccion de entrega"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+
+    <EditText
+        android:id="@+id/edtPedidoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombre cliente"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"/>
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#000000"
+        android:text="INGRESAR" />
+</LinearLayout>

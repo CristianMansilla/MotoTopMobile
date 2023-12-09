@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_client_agregar"
+    tools:context=".ClientesAgregarActivity">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="DETALLE CLIENTE:"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtDetalleDni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="DNI"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/edtDetalleNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="Nombre"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/edtDetalleApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="Apellido"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/edtDetalleTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="Teléfono"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/edtDetalleCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="Email"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/edtDetalleDomicilio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="Domicilio"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/edtDetalleDireccionEntrega"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="Dirección de entrega"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/edtDetalleDebe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="none"
+        android:hint="Debe"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:textSize="24dp"
+        android:focusable="false"/>
+
+</LinearLayout>
