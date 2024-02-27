@@ -90,11 +90,31 @@ public class ClientesActivity extends AppCompatActivity {
         listarClientes();
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }*/
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                if (isTaskRoot()) {
+                    // Si es la actividad raíz, ir al menú principal
+                    Intent intent = new Intent(this, MenuActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    // Si no es la actividad raíz, simplemente cerrar la actividad actual
+                    finish();
+                }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -108,6 +128,19 @@ public class ClientesActivity extends AppCompatActivity {
             listarClientes();
             //invalidateOptionsMenu();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Aquí puedes iniciar la actividad del menú principal o cualquier otra actividad que desees
+        super.onBackPressed();
+        // Utiliza la bandera FLAG_ACTIVITY_CLEAR_TOP para ir al menú principal
+        Intent intent = new Intent(this, MenuActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
+        // Asegúrate de finalizar la actividad actual para que no quede en la pila de actividades
+        finish();
     }
 
 
@@ -158,16 +191,35 @@ public class ClientesActivity extends AppCompatActivity {
 
     }
 
-    public void eliminarClientes(final int DNI){
-        //int DNI = Integer.parseInt(edtEditarDni.getText().toString().trim());
+    public void eliminarClientes(final int DNI) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Eliminar Cliente");
+        builder.setMessage("¿Estás seguro de que deseas eliminar este cliente?");
+        builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Llamada al método para eliminar el cliente
+                eliminarCliente(DNI);
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
+
+    private void eliminarCliente(int DNI) {
+        // Realizar la solicitud al servidor para eliminar el cliente
         String url = "http://192.168.56.1/ws_mototop/clientes/eliminar.php";
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 if (response.toLowerCase().contains("datos eliminados")) {
-                    Toast.makeText(ClientesActivity.this, "Eliminado correctamente", Toast.LENGTH_LONG).show();
-                    /*startActivity(new Intent(getApplicationContext(), ClientesActivity.class));
-                    finish();*/
+                    Toast.makeText(ClientesActivity.this, "Cliente eliminado correctamente", Toast.LENGTH_LONG).show();
                     // Buscar y eliminar el cliente de la lista
                     for (Clientes cliente : clientesArrayList) {
                         if (cliente.getDNI() == DNI) {
@@ -178,7 +230,7 @@ public class ClientesActivity extends AppCompatActivity {
                     // Notificar al adaptador del cambio en los datos
                     listaClientesAdapter.notifyDataSetChanged();
                 } else {
-                    Toast.makeText(ClientesActivity.this, "Error, no se puede eliminar", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ClientesActivity.this, "Error, no se puede eliminar el cliente", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -186,7 +238,7 @@ public class ClientesActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(ClientesActivity.this, error.getMessage(), Toast.LENGTH_LONG).show();
             }
-        }){
+        }) {
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {

@@ -12,10 +12,11 @@ public class Pedidos {
     private Date fecha_envio;
     private Date fecha_entrega;
     private int estado;
+    private String codSeguimiento;
     private String direccion_entrega;
     private double precio_total;
 
-    public Pedidos(int ID, int cliente_DNI, int vendedor_DNI, String cliente_nombre, String vendedor_nombre, Date fecha_generado, Date fecha_envio, Date fecha_entrega, int estado, String direccion_entrega, double precio_total) {
+    public Pedidos(int ID, int cliente_DNI, int vendedor_DNI, String cliente_nombre, String vendedor_nombre, Date fecha_generado, Date fecha_envio, Date fecha_entrega, int estado, String codSeguimiento, String direccion_entrega, double precio_total) {
         this.ID = ID;
         this.cliente_DNI = cliente_DNI;
         this.vendedor_DNI = vendedor_DNI;
@@ -25,6 +26,7 @@ public class Pedidos {
         this.fecha_envio = fecha_envio;
         this.fecha_entrega = fecha_entrega;
         this.estado = estado;
+        this.codSeguimiento = codSeguimiento;
         this.direccion_entrega = direccion_entrega;
         this.precio_total = precio_total;
     }
@@ -93,12 +95,29 @@ public class Pedidos {
         this.fecha_entrega = fecha_entrega;
     }
 
-    public int getEstado() {
-        return estado;
+    public String getEstado() {
+        switch (estado) {
+            case 0:
+                return "Recibido";
+            case 1:
+                return "En preparación";
+            case 2:
+                return "Enviado";
+            default:
+                return "Desconocido";
+        }
     }
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    public String getCodSeguimiento() {
+        return codSeguimiento;
+    }
+
+    public void setCodSeguimiento(String codSeguimiento) {
+        this.codSeguimiento = codSeguimiento;
     }
 
     public String getDireccion_entrega() {

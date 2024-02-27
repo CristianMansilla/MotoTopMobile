@@ -7,4 +7,5 @@
     <color name="yellow">#e9c46a</color>
     <color name="green">#2a9d8f</color>
     <color name="blue">#264653</color>
+    <color name="colorExceededStock">#FF0000</color>
 </resources>

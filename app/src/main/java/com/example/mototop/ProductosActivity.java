@@ -3,6 +3,7 @@ package com.example.mototop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -79,11 +80,24 @@ public class ProductosActivity extends AppCompatActivity {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject object = jsonArray.getJSONObject(i);
                             int ID = Integer.parseInt(object.getString("ID"));
-                            long barcode = Long.parseLong(object.getString("barcode"));
+                            String barcodeString = object.getString("barcode");
+                            long barcode = 0;  // o cualquier otro valor predeterminado que tenga sentido en tu aplicación
+
+                            try {
+                                barcode = Long.parseLong(barcodeString);
+                            } catch (NumberFormatException e) {
+                                e.printStackTrace();
+                                // Manejar el caso en que la cadena no sea un número válido
+                            }
                             int rubro_ID = Integer.parseInt(object.getString("rubro_ID"));
                             int proveedor_ID = Integer.parseInt(object.getString("proveedor_ID"));
                             String nombre = object.getString("nombre");
-                            String url_imagen = object.getString("url_imagen");
+
+                            String img_dataBase64 = object.getString("img_data");
+
+                            // Decodificar la cadena Base64 a un array de bytes
+                            byte[] img_data = Base64.decode(img_dataBase64, Base64.DEFAULT);
+
                             double precio = Double.parseDouble(object.getString("precio"));
                             int stock = Integer.parseInt(object.getString("stock"));
                             int oferta_descuento = 0;  // Valor predeterminado o cualquier otro valor predeterminado que tenga sentido en tu aplicación
@@ -132,7 +146,7 @@ public class ProductosActivity extends AppCompatActivity {
                                 // Manejar la excepción en caso de que la cadena no pueda ser parseada
                             }
 
-                            productos = new Productos(ID, barcode, rubro_ID, proveedor_ID, nombre, url_imagen, precio, stock, oferta_descuento, oferta_paga, oferta_lleva, ofertaInicio, ofertaFin);
+                            productos = new Productos(ID, barcode, rubro_ID, proveedor_ID, nombre, img_data, precio, stock, oferta_descuento, oferta_paga, oferta_lleva, ofertaInicio, ofertaFin);
                             productosArrayList.add(productos);
                         }
                         listaProductosAdapter.notifyDataSetChanged();

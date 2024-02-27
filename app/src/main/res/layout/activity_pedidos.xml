@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PedidosActivity"
     android:orientation="vertical"
-    android:background="@drawable/bg_client">
+    android:background="@drawable/bg_client"
+    android:padding="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

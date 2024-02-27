@@ -7,7 +7,8 @@
     android:layout_gravity="center"
     android:background="@drawable/bg_client_agregar"
     android:orientation="vertical"
-    tools:context=".PedidosAgregarActivity">
+    tools:context=".PedidosAgregarActivity"
+    android:padding="15dp">
 
 
     <TextView
@@ -21,6 +22,42 @@
         android:text="INGRESE LOS DATOS:"
         android:textColor="@color/blue"
         android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/txtVendedor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:text="Vendedor:"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtNombreVendedor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="NombreVendedor"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textColor="@color/blue"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
     <LinearLayout
@@ -38,7 +75,7 @@
             android:paddingStart="10dp"
             android:text="Fecha:"
             android:textColor="@color/blue"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <EditText
@@ -46,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@null"
             android:clickable="true"
             android:ems="10"
             android:focusable="false"
@@ -55,39 +93,79 @@
             android:paddingStart="10dp"
             android:textColor="@color/blue"
             android:textSize="24dp"
-            android:textStyle="bold"
-            android:background="@null" />
+            android:textStyle="bold" />
     </LinearLayout>
 
-    <Spinner
-        android:id="@+id/spinnerClientes"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.5"
-        android:paddingStart="10dp"
-        android:textColor="@color/blue"
-        android:textSize="24dp"
-        android:textStyle="bold" />
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/txtPedidoDireccionEntrega"
+        <TextView
+            android:id="@+id/txtCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:text="Cliente:"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerClientes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:paddingStart="10dp"
+            android:textColor="@color/blue"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:hint="Direccion de entrega"
-        android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        android:textColor="@color/blue"
-        android:textSize="24dp"
-        android:textStyle="bold" />
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtDireccionEntrega"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:text="D. Entrega:"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtPedidoDireccionEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:hint="Direccion de entrega"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textColor="@color/blue"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/txtTituloProducto"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center_vertical"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="PRODUCTOS"
         android:textColor="@color/orange"
@@ -99,6 +177,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_gravity="center"
+        android:background="#17D1C199"
         android:padding="10dp">
 
         <LinearLayout

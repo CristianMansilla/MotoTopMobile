@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:layout_gravity="center"
+android:background="@drawable/bg_client_agregar"
+tools:context=".PedidosDetallesActivity"
+android:padding="30dp">
+
+
+<TextView
+    android:id="@+id/textView3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:text="DETALLE PEDIDO:"
+    android:textColor="@color/blue"
+    android:textStyle="bold"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="20dp"
+    android:textSize="24sp" />
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:text="Fecha:"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtDetallePedidoFechaGenerado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="true"
+            android:ems="10"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:hint="dd/mm/aaaa"
+            android:inputType="none"
+            android:paddingStart="10dp"
+            android:textColor="@color/blue"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+</LinearLayout>
+
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:text="Cliente:"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtDetalleNombreYApellido"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:hint="Nombre y Apellido"
+        android:inputType="none"
+        android:paddingStart="10dp"
+        android:textColor="@color/blue"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtDireccionEntrega"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:text="D. Entrega:"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtDetalleDireccionEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="true"
+            android:ems="10"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:hint="Dirección de entrega"
+            android:inputType="none"
+            android:paddingStart="10dp"
+            android:textColor="@color/blue"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/txtEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:text="Estado:"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtDetalleEstado"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:hint="Recibido"
+        android:inputType="none"
+        android:paddingStart="10dp"
+        android:textColor="@color/blue"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/txtTituloProducto"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="PRODUCTOS"
+        android:textColor="@color/orange"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:background="#17D1C199"
+    android:padding="10dp">
+
+    <ListView
+        android:id="@+id/listViewProductosDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="40dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/txtTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: $"
+            android:textColor="@color/blue"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtDetalleTotal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="true"
+            android:ems="10"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:hint="0.00"
+            android:inputType="none"
+            android:paddingStart="10dp"
+            android:textColor="@color/blue"
+            android:textSize="24dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</RelativeLayout>
+</LinearLayout>

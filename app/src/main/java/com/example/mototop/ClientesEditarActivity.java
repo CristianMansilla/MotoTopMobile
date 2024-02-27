@@ -100,8 +100,12 @@ public class ClientesEditarActivity extends AppCompatActivity {
                     if (response.toLowerCase().contains("datos actualizados")) {
                         Toast.makeText(ClientesEditarActivity.this, "Actualizado correctamente", Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
-                        startActivity(new Intent(getApplicationContext(), ClientesActivity.class));
-                        finish();
+                        //startActivity(new Intent(getApplicationContext(), ClientesActivity.class));
+                        //finish();
+
+                        Intent intent = new Intent(getApplicationContext(), ClientesActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(ClientesEditarActivity.this, "Error, no se puede actualizar", Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
